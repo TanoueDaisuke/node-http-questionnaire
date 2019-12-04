@@ -1,0 +1,25 @@
+html(lang="ja")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title アンケート
+  body
+    h1 どちらが食べたいですか？
+    //- form(method="post" action="/enquestes/yaki-shabu")
+    form(method="post" action=path)
+      span 名前:
+      input(type="text", name="name")
+      //- input(type="radio", name="yaki-shabu" value="焼肉")
+      //- span 焼肉
+      //- input(type="radio", name="yaki-shabu" value="しゃぶしゃぶ")
+      //- span しゃぶしゃぶ
+
+      //- ↓↓より汎用性を高める↓↓
+
+      input(type="radio", name="favorite" value=firstItem)
+      span #{firstItem}
+      input(type="radio", name="favorite" value=secondItem)
+      span #{secondItem}
+    
+      button(type="submit") 投稿
